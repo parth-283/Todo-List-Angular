@@ -1,0 +1,142 @@
+.todo-card {
+  width: 35rem;
+  text-align: center;
+  padding: 2px;
+  box-shadow: 0.5px 0.5px 7.5px 1.5px #a49f9fe0;
+  background: transparent;
+}
+
+.todo-card h2 {
+  font-weight: 400;
+}
+
+.todo-card hr {
+  width: 75%;
+  margin: auto;
+  margin-bottom: 0.75rem !important;
+  margin-top: 0.75rem !important;
+}
+
+.todo-input {
+  border: none;
+  box-shadow: 3px 3px 3.5px 0.5px #cfceceba;
+}
+
+.add-task input:focus-visible {
+  border: none !important;
+  /* border-bottom: 1px solid #514e4e96; */
+}
+
+.add-task {
+  display: flex;
+}
+
+.add-task button {
+  border-radius: unset;
+  width: 7rem;
+  box-shadow: 3px 3px 3.5px 0.5px #0b5ed7;
+}
+
+.add-task button:hover {
+  box-shadow: 3px 3px 3.5px 0.5px #297efdb3;
+}
+
+.form-control:focus {
+  outline: 0 !important;
+  box-shadow: 3px 3px 17.5px 0.25rem rgb(209 209 209 / 46%) !important;
+}
+
+.todo-input::placeholder {
+  color: #aeaeae;
+}
+
+.task-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-title {
+  color: green;
+  font-weight: 400;
+  font-family: math;
+}
+
+.comaplete-hr {
+  border: 1.75px solid;
+}
+
+.task {
+  display: flex;
+  border: 1px solid #ccc;
+  /* width: 75%; */
+  height: 2.5rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-button {
+  width: 25px;
+  height: 25px;
+  border-radius: 20px;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.todo-check {
+  background: green;
+  font-size: 19px;
+}
+
+.todo-check:hover {
+  box-shadow: 1.5px 1.5px 11.5px -1px #008000c4;
+}
+
+.todo-edit {
+  background: darkcyan;
+}
+
+.todo-edit:hover {
+  box-shadow: 1.5px 1.5px 11.5px -1px #008b8bcf;
+}
+
+.todo-delete {
+  background: red;
+}
+
+.todo-delete:hover {
+  box-shadow: 1.5px 1.5px 11.5px -1px #ff0000ab;
+}
+
+.todo-restart {
+  background: #c6c616;
+}
+
+.todo-restart:hover {
+  box-shadow: 1.5px 1.5px 11.5px -1px #c6c616e8;
+}
+
+.button-list {
+  display: inline-flex;
+}
+
+.compeleted-task {
+  text-decoration: line-through;
+}
+
+.not-found {
+  font-family: math;
+  font-weight: 600;
+  color: #ed143dc7;
+  font-size: 17px;
+}
+
+.error-message {
+  font-size: 18px;
+  color: crimson;
+  font-family: math;
+  font-weight: 500;
+  text-align: start;
+}

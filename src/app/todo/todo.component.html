@@ -1,0 +1,94 @@
+<div class="card todo-card">
+  <h2 class="card-header">Angular Todo List App</h2>
+
+  <div class="card-body">
+    <div class="mb-4">
+      <div class="add-task">
+        <input
+          type="text"
+          name="todo"
+          [value]="text"
+          class="form-control todo-input mx-3"
+          placeholder="Enter Task"
+          (change)="handleTodoChange($event)"
+        />
+        <!-- <button type="button" class="btn btn-outline-primary mx-3"><i class="bi bi-plus-lg"></i> Add</button> -->
+        <button class="btn btn-primary mx-3" (click)="handleAddTodo()">
+          <i class="bi bi-plus-lg"></i>Add
+        </button>
+      </div>
+      <div class="mt-2" *ngIf="errorMessage != ''">
+        <p class="error-message ms-3">{{ errorMessage }}</p>
+      </div>
+    </div>
+
+    <hr class="comaplete-hr w-100" />
+    <section>
+      <h4 class="section-title">Tasks List</h4>
+
+      <hr />
+      <div class="task-list" *ngFor="let item of todo">
+        <div class="w-75" *ngIf="!item.completed">
+          <div class="task mb-2">
+            <span class="ms-2">{{ item.text }}</span>
+            <div class="button-list">
+              <button
+                class="task-button todo-edit mx-1"
+                (click)="handleEdit(item.id)"
+              >
+                <i class="bi bi-pencil-square"></i>
+              </button>
+              <button
+                class="task-button todo-check mx-1"
+                (click)="handleCheck(item.id)"
+              >
+                <i class="bi bi-check2"></i>
+              </button>
+              <button
+                class="task-button todo-delete mx-1"
+                (click)="handleDelete(item.id)"
+              >
+                <i class="bi bi-trash3-fill"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section *ngIf="!isTasks">
+        <p class="not-found">Task Not Found!!</p>
+      </section>
+      <hr class="comaplete-hr" />
+    </section>
+
+    <section *ngIf="isCompleted">
+      <h4 class="section-title">Completed Tasks</h4>
+
+      <hr />
+
+      <div class="task-list" *ngFor="let item of todo">
+        <div class="w-75" *ngIf="item.completed">
+          <div class="task mb-2">
+            <span class="ms-2 compeleted-task">{{ item.text }}</span>
+            <div class="button-list">
+              <button
+                class="task-button todo-restart mx-1"
+                (click)="handleReopen(item.id)"
+              >
+                <i class="bi bi-arrow-counterclockwise"></i>
+              </button>
+              <button
+                class="task-button todo-delete mx-1"
+                (click)="handleDelete(item.id)"
+              >
+                <i class="bi bi-trash3-fill"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="comaplete-hr" />
+    </section>
+  </div>
+</div>
