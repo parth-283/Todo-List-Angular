@@ -69,10 +69,10 @@
 .task {
   display: flex;
   border: 1px solid #ccc;
-  /* width: 75%; */
   height: 2.5rem;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 2.5px 2.5px 4.5px 1.5px #8080808f;
 }
 
 .task-button {

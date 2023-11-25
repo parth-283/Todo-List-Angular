@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { TODO } from './todo-interface';
 
 @Component({
@@ -46,6 +46,7 @@ export class TodoComponent {
           text: this.text,
           id: newId || 0,
           completed: false,
+          date: new Date(),
         });
       }
       this.isEditData = {};
@@ -69,7 +70,7 @@ export class TodoComponent {
     this.isEditData = editData;
     this.isEdit = true;
     this.text = editData?.text || '';
-     this.checkTodoList();
+    this.checkTodoList();
   }
 
   handleDelete(id: number) {

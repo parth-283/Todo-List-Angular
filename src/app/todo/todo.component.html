@@ -31,6 +31,7 @@
         <div class="w-75" *ngIf="!item.completed">
           <div class="task mb-2">
             <span class="ms-2">{{ item.text }}</span>
+            <span class="ms-2">{{ item.date | date }}</span>
             <div class="button-list">
               <button
                 class="task-button todo-edit mx-1"
@@ -70,6 +71,7 @@
         <div class="w-75" *ngIf="item.completed">
           <div class="task mb-2">
             <span class="ms-2 compeleted-task">{{ item.text }}</span>
+            <span class="ms-2">{{ item.date | date }}</span>
             <div class="button-list">
               <button
                 class="task-button todo-restart mx-1"
