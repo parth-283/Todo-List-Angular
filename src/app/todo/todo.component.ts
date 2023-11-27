@@ -15,6 +15,10 @@ export class TodoComponent {
   isEditData: any = {};
   errorMessage: string = '';
 
+  setLocalStorage() {
+    localStorage.setItem('parth-todo-list', JSON.stringify(this.todo));
+  }
+
   checkTodoList() {
     this.isCompleted = Boolean(
       this.todo.find((todo) => todo.completed == true)
@@ -49,6 +53,7 @@ export class TodoComponent {
           date: new Date(),
         });
       }
+      this.setLocalStorage();
       this.isEditData = {};
       this.isEdit = false;
       this.isTasks = true;
@@ -60,6 +65,7 @@ export class TodoComponent {
   handleCheck(id: number) {
     this.errorMessage = '';
     this.todo.map((todo) => (todo.id == id ? (todo.completed = true) : false));
+    this.setLocalStorage();
     this.isCompleted = true;
     this.isTasks = Boolean(this.todo.find((todo) => todo.completed == false));
   }
@@ -76,13 +82,14 @@ export class TodoComponent {
   handleDelete(id: number) {
     this.errorMessage = '';
     this.todo = this.todo.filter((todo) => todo.id !== id);
+    this.setLocalStorage();
     this.checkTodoList();
   }
 
   handleReopen(id: number) {
     this.errorMessage = '';
     this.todo.map((todo) => (todo.id == id ? (todo.completed = false) : false));
-
+    this.setLocalStorage();
     this.checkTodoList();
   }
 }
